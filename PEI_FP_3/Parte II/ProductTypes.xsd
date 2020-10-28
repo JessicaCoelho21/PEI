@@ -5,7 +5,7 @@
     xmlns:c="http://www.estg.pt/CommonTypes"> 
     
     <xs:complexType name="products">
-        <xs:sequence>
+        <xs:sequence maxOccurs="unbounded">
             <xs:element name="product" type="product_type"/>
         </xs:sequence>
     </xs:complexType>

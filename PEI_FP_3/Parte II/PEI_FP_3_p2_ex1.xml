@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faturas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://www.estg.pt/Main"
+<i:faturas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:i="http://www.estg.pt/Main"
     xsi:schemaLocation="http://www.estg.pt/Main Main.xsd">
     <fatura>
         <billing_address>
@@ -29,14 +29,14 @@
             <product>
                 <name>Router Asus</name>
                 <quantity>50</quantity>
-                <price moeda="EUR">53.99</price>
+                <price coin="EUR">53.99</price>
             </product>
 
             <product>
                 <name>Desktop DELL REF:4323E</name>
                 <quantity>20</quantity>
-                <price moeda="EUR">890.88</price>
+                <price coin="EUR">890.88</price>
             </product>
         </products>
     </fatura>
-</faturas>
+</i:faturas>
