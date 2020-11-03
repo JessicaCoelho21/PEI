@@ -20,7 +20,7 @@ R.: /bookstore/book[position()<2]
 R.: count(/bookstore/book)
 
 1.8. Do primeiro livro, devolver o seu segundo elemento; 
-R.: 
+R.: /bookstore/book[1]/child::*[position() = 2]
 
 1.9. Devolver os livros que contenham “ay” ou “ry” no seu título (title);
 R.: /bookstore/book[contains(title, 'ay')]/title/text() | /bookstore/book[contains(title, 'ry')]/title/text()
