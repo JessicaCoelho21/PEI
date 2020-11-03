@@ -32,5 +32,9 @@ let $c := $x/CD/ARTIST
 return <NumberArtists>{count($c)}</NumberArtists>
 
 Para aparecer o nome dos artistas:
-for $x in doc("cd_catalog.xml")//CD
-return <CD>{$x/ARTIST}</CD>
+<CATALOG>
+{
+    for $x in doc("cd_catalog.xml")//CD
+    return <CD>{$x/ARTIST}</CD>
+}
+</CATALOG>
