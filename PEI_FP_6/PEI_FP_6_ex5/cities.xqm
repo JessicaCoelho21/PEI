@@ -19,12 +19,15 @@ declare
 (: procura endpoint e executa :)
  %rest:path("/getcity")
  (: estamos a lidar com xml :)
- %rest:consumes("application/xml", "text/xml")
+ (:%rest:consumes("application/xml", "text/xml"):)
  (: obter informação :)
  %rest:GET
  
  (: função vai receber a informação do xml :)
 function page:getCities() {
- for $x in db:open('cities')//m:CapitalCityResponse/m:CapitalCityResult
- return $x
+  element cities {
+     for $x in db:open('cities')//m:CapitalCityResponse/m:CapitalCityResult/text()
+     return <capitalCity>{$x}</capitalCity>
+  }
+
 };
