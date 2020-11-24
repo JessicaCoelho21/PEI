@@ -23,9 +23,30 @@ for $t at $i in doc("bookstore.xml")//title
 return <Título pos="{$i}">{data($t)}</Título>
 
 2.5. Apresentar todos os livros (todos os elementos). Para os livros da categoria: WEB, deve ser aplicado um desconto de 15%;
-R.: for $b in doc("bookstore.xml")//book[@category='WEB']
+R.: 
+for $b in doc("bookstore.xml")//book[@category='WEB']
 let $i := $b/price * 0.85
 return <books>{$b/title, <newPrice>{$i}</newPrice>}</books>
 
-2.6. Escreva uma transformação XQuery que permita obter um novo documento XML de acordo com a
-estrutura do documento em anexo: newBookStore.xml.
+2.6. Escreva uma transformação XQuery que permita obter um novo documento XML de acordo com a estrutura do documento em anexo: newBookStore.xml.
+R.: 
+element htlm{
+  element body{
+    element h1{
+      "Bookstore"
+    },
+    element table{
+      element tr {
+        <td>Titulo</td>,
+        <td>Year</td>,
+        <td>Price</td>
+      }, 
+      for $book in bookstore/book
+      return element tr{
+        <td>{$book/title/text()}</td>,
+        <td>{$book/year/text()}</td>,
+        <td>{$book/price/text()}</td>
+      }
+    }
+  }
+}
